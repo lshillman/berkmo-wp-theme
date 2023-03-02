@@ -1,0 +1,740 @@
+/*
+Theme Name: BerkMo 2020
+Theme URI: http://berkeleymorris.org
+Author: Luke Hillman
+Author URI: http://lukehillman.net
+Description: BerkMo 2020 is a custom theme for Berkeley Morris, built on TidyThemes' excellent starter theme BlankSlate (v2019.1).
+Version: 1
+License: GNU General Public License
+License URI: https://www.gnu.org/licenses/gpl.html
+Tags: minimalist sticky-header responsive
+Text Domain: berkmo2020
+
+BerkMo 2020 WordPress Theme © 2020 Berkeley Morris
+BerkMo 2020 is distributed under the terms of the GNU GPL
+*/
+
+
+
+@font-face {
+    font-family: 'im_fell_englishitalic';
+    src: url('/wp-content/themes/berkmo2020/imfell/imfellenglish-italic-webfont.woff2') format('woff2'),
+         url('/wp-content/themes/berkmo2020/imfell/imfellenglish-italic-webfont.woff') format('woff'),
+         url('/wp-content/themes/berkmo2020/imfell/imfellenglish-italic-webfont.svg#im_fell_englishitalic') format('svg');
+	font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'im_fell_englishregular';
+    src: url('/wp-content/themes/berkmo2020/imfell/imfellenglish-regular-webfont.woff2') format('woff2'),
+         url('/wp-content/themes/berkmo2020/imfell/imfellenglish-regular-webfont.woff') format('woff'),
+         url('/wp-content/themes/berkmo2020/imfell/imfellenglish-regular-webfont.svg#im_fell_englishregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;vertical-align:baseline}body{line-height:1}button{outline:0}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}q{display:inline;font-style:italic}q:before{content:'"';font-style:normal}q:after{content:'"';font-style:normal}textarea,input[type="text"],input[type="button"],input[type="submit"],input[type="reset"],input[type="search"],input[type="password"]{-webkit-appearance:none;appearance:none;border-radius:0}table{border-collapse:collapse;border-spacing:0}th,td{padding:2px}big{font-size:120%}small,sup,sub{font-size:80%}sup{vertical-align:super}sub{vertical-align:sub}dd{margin-left:20px}kbd,tt{font-family:courier;font-size:12px}ins{text-decoration:underline}del,strike,s{text-decoration:line-through}dt{font-weight:bold}address,cite,var{font-style:italic}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+.sticky{}.bypostauthor{}.wp-caption{}.wp-caption-text{}.gallery-caption{}.alignright{}.alignleft{}.aligncenter{}.screen-reader-text{clip:rect(1px, 1px, 1px, 1px);position:absolute !important}
+
+
+body {
+	/* font-family: 'IM Fell English', serif; switched to sans serif 05-2022 */
+	font-family: sans-serif;
+	font-size: 1.25rem;
+	background-color: #f3f8fe;
+	color:#333;
+}
+
+body .imfell {
+	/* apply this class to anything that needs to be Ye Olde */
+	font-family: 'IM Fell English', serif;
+}
+
+body h1{
+	font-family: 'IM Fell English', serif;
+	font-size:3rem;
+	font-weight:bold;
+	margin-bottom:1rem;
+}
+
+body h2{
+	font-family: 'IM Fell English', serif;
+	font-size:2.5rem;
+	font-weight:bold;
+	margin-bottom:1rem;
+	margin-top: 1em;
+}
+
+body h3{
+	font-family: 'IM Fell English', serif;
+	font-size:2rem;
+	font-weight:bold;
+	margin-bottom:1rem;
+	margin-top: 2em;
+
+}
+
+body h4{
+	font-family: 'IM Fell English', serif;
+	font-size:1.5rem;
+	font-weight:bold;
+	margin-bottom:1rem;
+	margin-top: 2em;
+
+}
+
+body h5{
+	font-family: 'IM Fell English', serif;
+	font-size:1.5rem;
+	font-weight:bold;
+	margin-bottom:1rem;
+	margin-top: 2em;
+
+}
+
+body h6{
+	font-family: 'IM Fell English', serif;
+	font-size:1.5rem;
+	font-weight:bold;
+	margin-bottom:1rem;
+	margin-top: 2em;
+
+}
+
+body input[type=button], input[type=submit], input[type=reset] {
+  background-color: #a60000;
+	font-family: 'IM Fell English', serif;
+	font-size:1.25rem;
+	font-weight:900;
+  border: none;
+	border-radius: 2rem;
+  color: white;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  margin: 1rem 0;
+  cursor: pointer;
+}
+
+body input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover {
+	background-color: #8f0000;
+}
+
+body textarea{
+	border:1px solid #ccc;
+	width:100%;
+}
+
+body textarea:focus{
+	border:1px solid #a60000;
+}
+
+#header{
+	font-family: 'IM Fell English', serif;
+	height:60px;
+	position:sticky;
+	width:100%;
+	top:0;
+	border-bottom: 3px solid #a60000;
+	background-color: #fff;
+	background: rgb(43,232,235);
+	background: linear-gradient(90deg, rgba(43,232,235,1) 0%, rgba(101,240,130,1) 42%, rgba(255,182,26,1) 100%); 
+}
+
+#header-content{
+	max-width:1200px;
+	margin: 0 auto;
+	font-weight:900;
+	text-shadow:0px 0px 7px rgba(255, 255, 255, 1);
+}
+
+#header #branding{
+	display:block;
+	float:left;
+	margin:0 0 0 20px;
+	height:60px;
+	line-height:60px;
+}
+
+#header #search{
+	display:none;
+	float:right;
+	margin-right:20px
+}
+
+#header #site-title a{
+	color: #a60000;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+#header .menu{
+	float:right;
+}
+
+#header .menu li{
+	display:inline-block;
+	height:60px;
+	line-height:60px;
+	margin-right:1rem;
+}
+
+#header #desktopNavMenu ul li a:hover{
+	border-bottom:0;
+}
+
+#header .menu a{
+	color:#000;
+	text-decoration:none;
+	height:60px;
+	display:block;
+}
+
+#header .menu a:hover{
+	text-decoration:none;
+	color:#a60000;
+	border-bottom:8px solid #a60000;
+}
+
+#header #desktopNavMenu > .current-menu-item {
+	color: #a60000;
+	border-bottom:8px solid #a60000;
+}
+
+#content{
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#content .entry-meta a{
+	color:#a60000;
+	text-decoration: none;
+	box-shadow: 0 1px 0 0 currentColor;
+}
+
+.entry-footer a{
+	color:#a60000;
+	text-decoration: none;
+	box-shadow: 0 1px 0 0 currentColor;
+}
+
+#comments{
+	line-height:1.5;
+}
+
+#comments a{
+	color:#a60000;
+	text-decoration: none;
+}
+
+#content p a, #content ul a, #content ol a{
+	color:#a60000;
+	text-decoration: none;
+	box-shadow: 0 1px 0 0 currentColor;
+}
+
+.post{
+	margin: 40px 20px;
+	padding:20px;
+	background-color:#fff;
+	border: 1px solid #eee;
+	box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.1);
+}
+
+.type-page{
+	margin: 40px 20px;
+	padding:20px;
+	background-color:#fff;
+	border: 1px solid #eee;
+	box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.1);
+}
+
+.type-post{
+		line-height:1.5;
+}
+
+.entry-title{
+	text-align: center;
+	font-weight:bold;
+	margin-bottom:1rem;
+}
+
+.plural{
+	text-align:left;
+}
+
+.entry-title a{
+	color:#a60000;
+	text-decoration:none;
+}
+
+.entry-title a:hover{
+	text-decoration:underline;
+}
+
+.entry-content::after{
+	content: "";
+  display: table;
+  clear: both;
+}
+
+.entry-content p{
+	line-height: 1.5;
+}
+
+.entry-content ol{
+	margin: 1rem 0 1rem 2rem;
+	list-style-type:decimal;
+	line-height: 1.5;
+}
+
+.entry-content ul{
+	margin: 1rem 0 1rem 2rem;
+	list-style:disc;
+	line-height: 1.5;
+}
+
+.entry-content ul li{
+	margin-bottom:.25rem;
+}
+
+.wp-block-preformatted{
+	font-family:"Courier New", Courier, monospace;
+	margin:1rem 0;
+}
+
+.has-drop-cap:not(:focus)::first-letter{
+	font-family: 'IM Fell English', serif;
+	display:inline-block;
+	color: transparent;
+	background: linear-gradient(180deg, rgba(43,232,235,1) 0%, rgba(101,240,130,1) 42%, rgba(255,182,26,1) 100%);
+	/* margin: .05em .1em 1rem 0; */
+	padding-top: 0.1em;
+	-webkit-background-clip: text;
+}
+
+.wp-block-quote{
+	display:block;
+	padding-left:1rem;
+	border-left: 4px solid #a60000;
+	clear:left;
+	margin:1rem 0;
+}
+
+#comments {
+	padding:20px;
+}
+
+#commentform {
+	padding: 20px;
+	margin-top: 20px;
+}
+
+#comments-list .comment{
+	padding: 20px;
+	background-color: lightblue;
+	border-radius: 0px;
+	margin-top: 20px;
+}
+
+#comments-list .comment .children li{
+	background-color:#fff;
+	padding:20px;
+	margin-top: 20px;
+	width:100%;
+}
+
+#reply-title{
+	margin-top:2rem;
+}
+
+.comment-form-comment label{
+	display:block;
+	margin: 1rem 0 0 0;
+}
+
+#teamphoto{
+	background-color:#4e4835;
+	background-image: url("../berkmo2020/images/teamphoto-2022.jpg");
+	background-size:cover;
+	background-position: center;
+	height:800px;
+	text-align: center;
+	color: #ffffff;
+	padding-top:6rem;
+	margin-top:-1.25rem;
+}
+
+#teamphoto h1{
+	font-size:4.375rem;
+	font-weight: bold;
+	text-shadow:0px 2px 7px rgba(0, 0, 0, 0.5);
+}
+
+#sidebar{
+	font-family: 'IM Fell English', serif;
+	background-color: #01012f;
+	color: #fff;
+	padding:70px 20px 70px 20px;
+	border-top: 3px solid #a60000;
+}
+
+.widget-area{
+	margin:0 1rem;
+}
+
+#sidebar-content{
+	max-width:1200px;
+	margin: 0 auto;
+	display:flex;
+}
+
+#sidebar li{
+	margin-bottom:0.75rem;
+}
+
+#sidebar a{
+	color:#fff;
+	text-decoration:none;
+}
+
+#sidebar a:hover{
+	text-decoration:underline;
+}
+
+#footer{
+	padding:20px;
+	text-align: center;
+	background-color: #fff;
+}
+
+#header{
+	z-index:99;
+}
+
+#desktopNavMenu ul {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+		min-width:280px;
+    z-index: 99;
+    background: #fff;
+    box-shadow: 0px 3px 3px rgba(0,0,0,0.2);
+}
+
+#desktopNavMenu li:hover > ul {
+	display: block;
+}
+
+#site-title{
+ padding-top: 0.4rem;
+}
+
+#site-title svg .a {
+	fill: #a60000;
+}
+
+#desktopNavMenu li {
+	position:relative;
+}
+
+#desktopNavMenu .sub-menu li a {
+	padding-left:20px;
+}
+
+#desktopNavMenu .sub-menu li {
+	width:100%;
+}
+
+#header #desktopNavMenu ul .current-menu-item a {
+	background-color: #a60000;
+	color: #fff;
+}
+
+.menu-item-has-children > a::after{
+	content:" ▾";
+}
+
+#mobileMenuBtn{
+	float:right;
+	background:url('../berkmo2020/images/hamburger.svg') center no-repeat;
+	display:none;
+	color:transparent;
+	height: 60px;
+	width:60px;
+	border:0;
+	cursor:pointer;
+}
+
+#mobileMenuBtn:active {
+	background-color: rgba(255, 255, 255, 0.5);
+	border-bottom: 3px solid #a60000;
+}
+
+#mobile-nav-overlay{
+	display:none;
+	background-color: rgba(0,0,0,0.5);
+	float:left;
+	height:100%;
+	width:100%;
+	position:fixed;
+	z-index:98;
+}
+
+#mobilenav-container{
+	max-height:calc(100vh - 60px);
+	overflow:scroll;
+	clear:both;
+}
+
+#mobileNavMenu {
+	text-align:left;
+	}
+
+#mobileNavMenu li {
+	background-color: #f3f8fe;
+	line-height:60px;
+	border-bottom: 1px solid #a60000;
+}
+
+
+
+
+#mobileNavMenu .current_page_item > a {
+	border-left: 5px solid #a60000;
+}
+
+#mobileNavMenu .children li {
+	border-top:1px solid #a60000;
+	border-bottom:none;
+}
+
+#mobileNavMenu .sub-menu li {
+	border-top:1px solid #a60000;
+	border-bottom:none;
+	font-weight: normal;
+	background-color:rgba(255,255,255,0.6)
+}
+
+#mobileNavMenu a {
+	display:block;
+	color: #a60000;
+	text-decoration:none;
+	padding-left:20px;
+}
+
+#mobileNavMenu .children li a {
+	padding-left:35px;
+}
+
+#mobileNavMenu .sub-menu li a {
+	padding-left:35px;
+}
+
+#mobileNavMenu a:hover{
+	background-color: #a60000;
+	color: #fff;
+}
+
+body table {
+	margin: 1rem 0;
+}
+
+body table td, th {
+	padding: 1rem
+}
+
+body table thead {
+	background-color: #a60000;
+	color:white;
+	text-align:left;
+}
+
+#content table a {
+	line-height: 1.5;
+	color:#a60000;
+	text-decoration: none;
+	box-shadow: 0 1px 0 0 currentColor;
+}
+
+body p{
+	margin: 1rem 0;
+}
+
+#mobileNavMenu a:active{
+	background-color: #a60000;
+	color: #fff;
+}
+
+.wp-block-quote{
+	margin: 1rem 0;
+}
+
+.nav-links {
+	margin:0 auto 1rem auto;
+	display:table;
+}
+
+.nav-links div {
+	display: table-cell;
+	padding:0 20px;
+}
+
+.nav-links a {
+	color: #a60000;
+	text-decoration: none;
+}
+
+#sidebar-content{
+	flex-wrap: wrap;
+	justify-content: space-around;
+
+}
+
+#footer-logo img {
+	max-width:100%;
+	max-height:300px;
+	width: auto;
+	height:auto;
+}
+
+#footer-logo{
+	margin-right: 1rem;
+}
+
+#sidebar-content > div {
+	
+}
+
+.has-drop-cap:not(:focus)::first-letter{
+	margin-top: -0.03em;
+}
+
+#commentform {
+	border: 5px solid rgb(43,232,235);
+}
+
+#comments-list .comment, #commentform {
+	border-image-width: 5px;
+	border-image-source: linear-gradient(90deg, rgb(43,232,235) 0%, rgb(101,240,130) 42%, rgb(255,182,26) 100%);
+	border-image-slice: 1;
+	background-color: #fff;
+		#7cf1f3
+	-a2f6b4-ffe5ad
+}
+
+#comments-list .comment .children li{
+	background-color: #fff;
+	border-image: none;
+	padding-bottom:0;
+}
+
+#comments-list .comment{
+	border-left: 5px solid #7ED6F1;
+}
+
+body textarea {
+	border: 3px solid #7ED6F1;
+	padding: 0.5rem;
+	font-family: 'IM Fell English', serif;
+	font-size:1.25rem;
+	height:8rem;
+	max-width: 100%;
+
+}
+
+body textarea:focus {
+	border: 3px solid #65f082;
+}
+
+body input[type=button], input[type=submit], input[type=reset] {
+  background-color: #65f082;
+	font-family: 'IM Fell English', serif;
+	font-size:1.25rem;
+	font-weight:900;
+  border: none;
+	border-radius: 2rem;
+  color: #333;
+  padding: 0 2rem;
+  text-decoration: none;
+  margin: 0.5rem;
+  cursor: pointer;
+	height: 50px;
+	line-height: 50px;
+}
+
+body input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover {
+	background-color: #0F952C;
+	color: #fff;
+}
+
+body input[type=text], input[type=search] {
+	border: 3px solid #7ED6F1;
+	padding: 0.5rem;
+	font-family: 'IM Fell English', serif;
+	font-size:1.25rem;
+	max-width: 100%;
+}
+
+
+body input[type=text]:focus, input[type=search]:focus {
+	border: 3px solid #65f082;
+}
+
+#commentform label {
+	display: block;
+	clear: right;
+}
+
+#commentform .comment-form-cookies-consent label {
+	display:inline;
+}
+
+.wp-block-image .aligncenter > figcaption, .wp-block-image .alignleft > figcaption, .wp-block-image .alignright > figcaption, .wp-block-image.is-resized > figcaption {
+    text-align: center;
+}
+
+.wp-block-media-text__media img, .wp-block-media-text__media video {
+	height: auto;
+}
+
+@media only screen and (max-width:830px) {
+	
+	#desktopNavMenu {
+		display:none;
+	}
+	#mobileMenuBtn{
+		display:block;
+	}
+	#teamphoto{
+		height:75vh;
+	}
+	
+	.type-page, .post{
+		margin:0;
+	}
+	
+}
+
+@media only screen and (max-width:700px) {
+		#footer-logo{
+		margin:0 auto 1rem auto;
+	}
+	
+	#footer-logo img {
+		max-width:10rem;
+	}
+	
+	#sidebar-content div{
+		text-align:center;
+		width:100%;
+	}
+	
+}
+
+
